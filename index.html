@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VANGUARD GLD | O Padrão Esmeralda em Chapecó</title>
-    <meta name="description" content="O estúdio definitivo em Chapecó. Engenharia facial para o homem que exige o absoluto. Agende a sua sessão.">
+    <title>IMPERIUM BARBER | Alto Padrão em Chapecó</title>
+    <meta name="description" content="A barbearia definitiva em Chapecó. Engenharia facial para o homem que exige o absoluto. Agende a sua sessão.">
     
-    <!-- Open Graph Meta Tags (Para partilhas no WhatsApp/Instagram) -->
-    <meta property="og:title" content="VANGUARD GLD | Alta Performance Visual">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="IMPERIUM BARBER | Alta Performance Visual">
     <meta property="og:description" content="A arquitetura da sua imagem levada à perfeição. Junte-se à elite de Chapecó.">
     <meta property="og:image" content="https://projetobarber2026.carrd.co/assets/images/image01.jpg?v=1af6d300">
     <meta property="og:type" content="website">
 
-    <!-- Preload Fonts para Performance -->
+    <!-- Preload Fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- Tailwind CSS -->
@@ -26,12 +26,12 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- Schema Markup SEO Local (Barbearia Chapecó) -->
+    <!-- Schema Markup SEO Local -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "HairSalon",
-      "name": "Vanguard GLD Studio",
+      "name": "Imperium Barber Club",
       "image": "https://projetobarber2026.carrd.co/assets/images/image01.jpg?v=1af6d300",
       "address": {
         "@type": "PostalAddress",
@@ -45,13 +45,13 @@
 
     <style>
         :root {
-            /* Verde Esmeralda Imperial */
+            /* Verde Esmeralda Imperial Otimizado */
             --gld-bg: #02140C;
             --gld-surface: #042416;
-            --emerald-glass: rgba(4, 47, 28, 0.65);
+            --emerald-glass: rgba(4, 47, 28, 0.75);
             --emerald-border: #0A3D26;
             --emerald-pop: #059669; 
-            --light-contrast: #E4EBE6;
+            --light-contrast: #F2F5F3; 
             
             /* Ouro Escovado */
             --gold-light: #F4E4C1;
@@ -82,16 +82,16 @@
 
         /* Componentes de Vidro Acessíveis */
         .glass-emerald {
-            background: linear-gradient(180deg, var(--emerald-glass) 0%, rgba(2, 20, 12, 0.8) 100%);
-            box-shadow: inset 0 1px 0 rgba(197, 160, 89, 0.2);
+            background: linear-gradient(180deg, var(--emerald-glass) 0%, rgba(2, 20, 12, 0.9) 100%);
+            box-shadow: inset 0 1px 0 rgba(197, 160, 89, 0.25);
             border-bottom: 1px solid var(--emerald-border);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
         }
 
         .btn-gld {
             background: linear-gradient(135deg, var(--gold-main) 0%, var(--gold-dark) 100%);
-            color: var(--emerald-bg);
+            color: var(--gld-bg);
             font-weight: 800;
             position: relative;
             overflow: hidden;
@@ -104,13 +104,13 @@
             content: '';
             position: absolute;
             top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
             transform: skewX(-25deg);
             animation: sweepLight 4s infinite 1s;
         }
 
         .btn-gld:hover, .btn-gld:focus-visible {
-            box-shadow: 0 15px 40px rgba(197, 160, 89, 0.3);
+            box-shadow: 0 15px 40px rgba(197, 160, 89, 0.4);
             transform: translateY(-2px);
             outline: 2px solid var(--light-contrast);
             outline-offset: 4px;
@@ -118,7 +118,7 @@
 
         @keyframes sweepLight { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
 
-        /* Acessibilidade e Preferência de Sistema */
+        /* Acessibilidade */
         @media (prefers-reduced-motion: reduce) {
             * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
         }
@@ -127,17 +127,16 @@
         .is-visible { opacity: 1; transform: translateY(0); }
 
         .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .text-stroke-gld { color: transparent; -webkit-text-stroke: 1px rgba(197, 160, 89, 0.4); }
-        .ambient-light { background: radial-gradient(circle, rgba(197,160,89,0.1) 0%, transparent 60%); }
+        .ambient-light { background: radial-gradient(circle, rgba(197,160,89,0.15) 0%, transparent 65%); }
     </style>
 </head>
 <body>
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useEffect, useRef, useCallback } = React;
+        const { useState, useEffect, useRef } = React;
 
-        // Custom Hook: Intersection Observer (Performance & Clean Architecture)
+        // Custom Hook: Intersection Observer
         const useIntersectionObserver = (options = { threshold: 0.1, triggerOnce: true }) => {
             useEffect(() => {
                 const observer = new IntersectionObserver((entries) => {
@@ -155,13 +154,6 @@
             }, [options]);
         };
 
-        const WhatsAppIcon = () => (
-            <svg viewBox="0 0 24 24" className="w-8 h-8 fill-white relative z-10" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.031 0C5.385 0 0 5.387 0 12.035c0 2.124.553 4.195 1.604 6.01L.062 24l6.105-1.602A11.97 11.97 0 0012.031 24c6.646 0 12.035-5.387 12.035-12.035C24.066 5.387 18.677 0 12.031 0zm7.11 17.382c-.328.918-1.921 1.765-2.656 1.834-.702.065-1.57.172-4.992-1.258-4.04-1.693-6.666-5.836-6.868-6.108-.202-.271-1.642-2.189-1.642-4.175 0-1.986 1.033-2.96 1.399-3.29.366-.33.801-.413 1.066-.413.265 0 .53.003.762.015.244.012.571-.097.893.684.336.818 1.082 2.656 1.182 2.862.1.205.166.446.033.717-.133.271-.2.436-.4.664-.199.228-.415.485-.598.68-.199.208-.412.435-.18.825.231.391 1.026 1.688 2.197 2.668 1.514 1.267 2.766 1.662 3.163 1.855.397.193.632.164.866-.098.234-.262 1.011-1.185 1.284-1.592.273-.407.545-.34.908-.236.363.102 2.302 1.087 2.698 1.285.397.198.662.297.762.462.099.165.099.957-.229 1.875z"/>
-            </svg>
-        );
-
-        // Ícone da Marca: Gravata Vermelha de Alta Costura
         const RedTieIcon = ({ className }) => (
             <svg viewBox="0 0 24 24" className={className || "w-8 h-8"} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M10 2H14L13.5 6H10.5L10 2Z" fill="#DC2626" />
@@ -169,35 +161,13 @@
             </svg>
         );
 
-        // Componente LGPD (Cookies)
-        const CookieConsent = () => {
-            const [show, setShow] = useState(false);
-            useEffect(() => {
-                if(!localStorage.getItem('vanguard_gld_cookies')) setShow(true);
-            }, []);
-            
-            if(!show) return null;
-            return (
-                <div className="fixed bottom-6 left-6 z-[300] bg-[var(--emerald-surface)] border border-[var(--gold-main)]/30 p-6 rounded-lg shadow-2xl max-w-sm" role="dialog" aria-live="polite">
-                    <h4 className="text-sm font-bold text-white mb-2 font-tech">O Padrão de Privacidade</h4>
-                    <p className="text-[10px] text-gray-400 mb-4 leading-relaxed">Utilizamos cookies rigorosamente necessários para elevar a sua experiência. A sua discrição é o nosso compromisso.</p>
-                    <div className="flex gap-4">
-                        <button onClick={() => { localStorage.setItem('vanguard_gld_cookies', 'true'); setShow(false); }} className="btn-gld px-6 py-2 rounded-sm text-[10px] uppercase font-bold tracking-[0.2em]">Aceitar</button>
-                    </div>
-                </div>
-            );
-        };
-
         const App = () => {
             const [isScrolled, setIsScrolled] = useState(false);
             const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-            const [showToast, setShowToast] = useState(true);
             const [deviceIQ, setDeviceIQ] = useState({ isLowEnd: false, isMobile: false });
-            const trendsRef = useRef(null);
             
             useIntersectionObserver();
 
-            // Auditoria Hardware e Events
             useEffect(() => {
                 const checkDevice = () => {
                     const ram = navigator.deviceMemory || 4;
@@ -214,14 +184,11 @@
                     if (e.key === 'Escape' && mobileMenuOpen) setMobileMenuOpen(false);
                 };
                 window.addEventListener('keydown', handleKeyDown);
-                
-                const toastTimer = setTimeout(() => setShowToast(false), 8000);
 
                 return () => {
                     window.removeEventListener('scroll', handleScroll);
                     window.removeEventListener('resize', checkDevice);
                     window.removeEventListener('keydown', handleKeyDown);
-                    clearTimeout(toastTimer);
                 };
             }, [mobileMenuOpen]);
 
@@ -229,82 +196,60 @@
                 document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'unset';
             }, [mobileMenuOpen]);
 
-            // Draggable Slider Logic
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-            const handleMouseDown = (e) => {
-                isDown = true;
-                startX = e.pageX - trendsRef.current.offsetLeft;
-                scrollLeft = trendsRef.current.scrollLeft;
-            };
-            const handleMouseLeave = () => { isDown = false; };
-            const handleMouseUp = () => { isDown = false; };
-            const handleMouseMove = (e) => {
-                if(!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - trendsRef.current.offsetLeft;
-                const walk = (x - startX) * 2; 
-                trendsRef.current.scrollLeft = scrollLeft - walk;
-            };
-
-            const scrollTrends = (dir) => {
-                if (trendsRef.current) {
-                    const offset = dir === 'left' ? -350 : 350;
-                    trendsRef.current.scrollBy({ left: offset, behavior: 'smooth' });
-                }
-            };
-
-            const services = [
-                { title: "Corte & Visagismo", price: "80", desc: "Análise facial e corte geométrico estruturado.", img: "https://images.unsplash.com/photo-1621605815841-aa88c82100bb?w=800" },
-                { title: "Barboterapia GLD", price: "70", desc: "Toalhas quentes, óleos botânicos e finalização.", img: "https://images.unsplash.com/photo-1593702295094-ada35bc19ad7?w=800" },
-                { title: "Sessão Vanguard", price: "140", desc: "O ritual absoluto: Corte, Barba e Alinhamento.", img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800" }
+            // Os 7 Cortes (Clássicos e Tendências 2026)
+            const portfolioItems = [
+                { img: "https://projetobarber2026.carrd.co/assets/images/image02.jpg?v=ec553877", t: "DEGRADÊ NAVALHADO", d: "Skin Fade Perfeito", alt: "Corte Degradê Navalhado" },
+                { img: "https://projetobarber2026.carrd.co/assets/images/image03.jpg?v=ec553877", t: "SOCIAL EXECUTIVO", d: "Alta Costura em Tesoura", alt: "Corte clássico Social Executivo" },
+                { img: "https://projetobarber2026.carrd.co/assets/images/image01.jpg?v=1af6d300", t: "CROP TEXTURIZADO", d: "Geometria de Vanguarda", alt: "Corte Crop Texturizado" },
+                { img: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800", t: "POMPADOUR CLÁSSICO", d: "Volume & Presença", alt: "Corte Pompadour Clássico" },
+                { img: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=800", t: "TAPER FADE", d: "Acabamento Milimétrico", alt: "Corte Taper Fade" },
+                { img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800", t: "MULLET MODERNO", d: "A Tendência 2026", alt: "Corte Mullet Moderno" },
+                { img: "https://images.unsplash.com/photo-1621605815841-aa88c82100bb?auto=format&fit=crop&q=80&w=800", t: "BUZZ CUT", d: "Atitude & Precisão", alt: "Corte Buzz Cut" }
             ];
 
-            const WAMessage = encodeURIComponent("Olá Vanguard, gostaria de agendar uma sessão premium GLD.");
+            const services = [
+                { title: "Corte Executivo", price: "80", desc: "Análise facial e corte geométrico estruturado.", img: "https://images.unsplash.com/photo-1621605815841-aa88c82100bb?w=800" },
+                { title: "Barboterapia Premium", price: "70", desc: "Toalhas quentes, óleos botânicos e finalização.", img: "https://images.unsplash.com/photo-1593702295094-ada35bc19ad7?w=800" },
+                { title: "Sessão Imperium", price: "140", desc: "O ritual absoluto: Corte, Barba e Alinhamento.", img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800" }
+            ];
+
+            const WAMessage = encodeURIComponent("Olá Imperium Barber, gostaria de acionar o Concierge para agendar uma sessão de alto padrão.");
             const WALink = `https://wa.me/5549999999999?text=${WAMessage}`;
 
             return (
-                <div className="min-h-screen">
-                    <CookieConsent />
-
-                    {showToast && (
-                        <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[110] gld-toast rounded-full px-6 py-3 flex items-center gap-4 cursor-pointer hover:bg-[var(--emerald-surface)] transition-colors" onClick={() => setShowToast(false)} role="alert">
-                            <i data-lucide="shield-check" className="w-4 h-4 text-[#C5A059]" aria-hidden="true"></i>
-                            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-gray-200 font-medium">GLD Concierge: <span className="text-white font-bold ml-1">Sessões limitadas disponíveis</span></span>
-                            <button aria-label="Fechar notificação" className="ml-2 text-[#C5A059] hover:text-white"><i data-lucide="x" className="w-3 h-3"></i></button>
-                        </div>
-                    )}
-
-                    <header className={`fixed top-0 w-full z-[100] transition-all duration-700 ${isScrolled ? 'glass-emerald py-4' : 'py-8'}`}>
+                <div className="min-h-screen relative">
+                    
+                    {/* NAVBAR */}
+                    <header className={`fixed top-0 w-full z-[100] transition-all duration-700 ${isScrolled ? 'glass-emerald py-4' : 'py-6 md:py-8'}`}>
                         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-sm border border-red-900/30 flex items-center justify-center bg-red-950/20 shadow-[0_0_15px_rgba(220,38,38,0.15)]">
-                                    <RedTieIcon className="w-5 h-5" />
+                                    <RedTieIcon className="w-4 h-4 md:w-5 md:h-5" />
                                 </div>
                                 <div className="flex flex-col">
-                                    <h1 className="text-[14px] font-black tracking-[0.3em] uppercase leading-none text-white drop-shadow-md m-0">VANGUARD</h1>
-                                    <span className="text-[9px] font-bold tracking-[0.4em] text-brushed-gold uppercase leading-tight mt-1">GLD Studio</span>
+                                    <h1 className="text-[12px] md:text-[14px] font-black tracking-[0.3em] uppercase leading-none text-white drop-shadow-md m-0">IMPERIUM</h1>
+                                    <span className="text-[8px] md:text-[9px] font-bold tracking-[0.4em] text-brushed-gold uppercase leading-tight mt-1">Barber Club</span>
                                 </div>
                             </div>
                             
-                            <nav className="hidden lg:flex gap-10" aria-label="Navegação Principal">
-                                {['O Estúdio', 'Catálogo', 'Arquitetura', 'Aliança'].map((item) => (
-                                    <a key={item} href={`#${item.toLowerCase().replace(' ', '').replace('o', '')}`} className="text-[10px] uppercase tracking-[0.3em] text-gray-300 hover:text-[#C5A059] transition-colors focus-visible:outline focus-visible:outline-[#C5A059] p-1">{item}</a>
+                            <nav className="hidden lg:flex gap-10 items-center" aria-label="Navegação Principal">
+                                {['A Barbearia', 'Catálogo', 'Arquitetura', 'Coleção'].map((item) => (
+                                    <a key={item} href={`#${item.toLowerCase().replace(' ', '').replace('ã', 'a').replace('ç', 'c')}`} className="text-[10px] uppercase tracking-[0.3em] text-gray-300 hover:text-[#C5A059] transition-colors focus-visible:outline focus-visible:outline-[#C5A059] p-2">{item}</a>
                                 ))}
-                                <a href={WALink} className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#C5A059] hover:text-white transition-colors">Agendar</a>
+                                <a href={WALink} className="btn-gld px-6 py-2.5 rounded-sm text-[9px] uppercase tracking-[0.3em] font-bold shadow-lg hover:scale-105">Agendar</a>
                             </nav>
 
-                            <button onClick={() => setMobileMenuOpen(true)} className="lg:hidden flex items-center gap-3 group" aria-label="Abrir Menu" aria-expanded={mobileMenuOpen}>
-                                <div className="p-3 border border-[#C5A059]/30 rounded-full group-hover:border-[#C5A059] transition-all bg-[var(--emerald-surface)] focus-visible:outline focus-visible:outline-[#C5A059]">
+                            <button onClick={() => setMobileMenuOpen(true)} className="lg:hidden flex items-center p-2 group" aria-label="Abrir Menu" aria-expanded={mobileMenuOpen}>
+                                <div className="p-2 border border-[#C5A059]/30 rounded-full group-hover:border-[#C5A059] transition-all bg-[var(--gld-surface)] focus-visible:outline focus-visible:outline-[#C5A059]">
                                     <i data-lucide="menu" className="w-5 h-5 text-[#C5A059]" aria-hidden="true"></i>
                                 </div>
                             </button>
                         </div>
                     </header>
 
+                    {/* MOBILE MENU */}
                     <div className={`fixed inset-0 z-[150] transition-all duration-[800ms] cubic-bezier(0.16, 1, 0.3, 1) ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`} 
-                         style={{background: 'rgba(2, 20, 12, 0.95)', backdropFilter: deviceIQ.isLowEnd ? 'none' : 'blur(30px)'}}>
+                         style={{background: 'rgba(2, 20, 12, 0.98)', backdropFilter: deviceIQ.isLowEnd ? 'none' : 'blur(40px)'}}>
                         <div className="flex justify-end p-6 md:p-10">
                             <button onClick={() => setMobileMenuOpen(false)} aria-label="Fechar Menu" className="p-3 border border-[#C5A059]/50 rounded-full hover:bg-[#C5A059]/20 transition-colors focus-visible:outline focus-visible:outline-[#C5A059]">
                                 <i data-lucide="x" className="w-6 h-6 text-[#C5A059]" aria-hidden="true"></i>
@@ -312,84 +257,79 @@
                         </div>
                         <nav className="flex flex-col items-center justify-center h-full gap-8 pb-20">
                             <span className="text-[10px] tracking-[0.5em] text-[#C5A059] uppercase mb-4 drop-shadow-lg">Acesso Exclusivo</span>
-                            {['O ESTÚDIO', 'CATÁLOGO', 'ARQUITETURA', 'PORTFÓLIO'].map((item, i) => (
-                                <a key={item} href={`#${item.toLowerCase().replace(' ', '').replace('o', '')}`} onClick={(e) => { setMobileMenuOpen(false); }} className="text-4xl md:text-5xl font-editorial italic text-white hover:text-[#C5A059] transition-colors focus-visible:outline focus-visible:outline-[#C5A059] p-2" style={{transitionDelay: `${i * 0.1}s`}}>{item}</a>
+                            {['A BARBEARIA', 'CATÁLOGO', 'ARQUITETURA', 'COLEÇÃO'].map((item, i) => (
+                                <a key={item} href={`#${item.toLowerCase().replace(' ', '').replace('ã', 'a').replace('ç', 'c')}`} onClick={() => setMobileMenuOpen(false)} className="text-4xl md:text-5xl font-editorial italic text-white hover:text-[#C5A059] transition-colors focus-visible:outline focus-visible:outline-[#C5A059] p-2" style={{transitionDelay: `${i * 0.1}s`}}>{item}</a>
                             ))}
                         </nav>
                     </div>
 
                     <main>
-                        <section id="estúdio" className="relative h-[100dvh] flex flex-col justify-end pb-24 md:pb-32 px-6 overflow-hidden">
-                            <div className="absolute top-1/4 left-1/4 w-[50vw] h-[50vw] ambient-light rounded-full mix-blend-screen -z-10" aria-hidden="true"></div>
-                            
-                            <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-                                <div className="w-[90vw] h-[75vh] md:w-[50vw] md:h-[85vh] rounded-[200px] md:rounded-[500px] overflow-hidden border border-[#C5A059]/20 opacity-70 shadow-[0_0_60px_rgba(197,160,89,0.15)]">
-                                    <img src="https://projetobarber2026.carrd.co/assets/images/image01.jpg?v=1af6d300" alt="Mestre Barbeiro em estúdio executando alinhamento" className="w-full h-full object-cover grayscale object-center scale-110 contrast-125 mix-blend-luminosity select-none" />
-                                </div>
-                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--emerald-bg)] via-[var(--emerald-bg)]/60 to-transparent"></div>
+                        {/* HERO SECTION - REFINADO (Minimalista, Elegante e Direto) */}
+                        <section id="abarbearia" className="relative min-h-[100dvh] flex flex-col justify-center px-6 overflow-hidden">
+                            {/* Fundo Total com Imagem e Efeito de Vidro Refinado */}
+                            <div className="absolute inset-0 z-0">
+                                <img src="https://projetobarber2026.carrd.co/assets/images/image01.jpg?v=1af6d300" alt="Mestre Barbeiro em estúdio" className="w-full h-full object-cover grayscale object-center scale-[1.05] contrast-125 mix-blend-luminosity select-none" />
+                                
+                                {/* Overlay de Vidro Suave */}
+                                <div className="absolute inset-0 bg-[var(--gld-bg)]/80 backdrop-blur-sm"></div>
+                                <div className="absolute inset-0 bg-gradient-to-b from-[var(--gld-bg)]/90 via-transparent to-[var(--gld-bg)]"></div>
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(5,150,105,0.15)_0%,transparent_70%)]"></div>
                             </div>
                             
-                            <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+                            <div className="relative z-20 max-w-5xl mx-auto w-full flex flex-col items-center text-center mt-16 md:mt-0">
                                 <div className="reveal-on-scroll flex flex-col items-center">
-                                    <span className="text-[10px] md:text-[11px] tracking-[0.5em] text-[#C5A059] uppercase mb-4 drop-shadow-md font-bold">O Padrão Absoluto</span>
-                                    <h2 className="text-[14vw] md:text-[8vw] font-editorial italic leading-[0.9] mb-6 text-white drop-shadow-2xl">
+                                    
+                                    <span className="text-[10px] md:text-[11px] tracking-[0.6em] text-[#C5A059] uppercase mb-6 md:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] font-bold">
+                                        Imperium Barber Club
+                                    </span>
+                                    
+                                    <h2 className="text-5xl md:text-7xl lg:text-[7.5vw] font-editorial italic leading-[1.1] mb-6 text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
                                         A Arte da <br className="md:hidden" />
-                                        <span className="font-sans not-italic font-black text-brushed-gold tracking-tighter drop-shadow-lg ml-0 md:ml-4">EXCELÊNCIA.</span>
+                                        <span className="font-sans not-italic font-black text-brushed-gold tracking-tighter drop-shadow-2xl ml-0 md:ml-4 uppercase">Excelência.</span>
                                     </h2>
-                                    <p className="max-w-md text-[10px] md:text-xs tracking-[0.3em] text-[#A7C2B4] uppercase leading-relaxed mb-10 drop-shadow-sm">
-                                        O estúdio definitivo em Chapecó. Engenharia facial para o homem que exige o absoluto.
+                                    
+                                    <p className="max-w-md text-[10px] md:text-xs tracking-[0.3em] text-[#A7C2B4] uppercase leading-relaxed mb-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                                        A engenharia facial definitiva para o homem que exige o absoluto em Chapecó.
                                     </p>
-                                    <a href={WALink} className="btn-gld px-14 py-5 rounded-sm text-[10px] md:text-xs tracking-[0.4em] uppercase inline-block font-bold">
+                                    
+                                    <a href={WALink} className="btn-gld px-10 md:px-14 py-4 md:py-5 rounded-sm text-[10px] md:text-[11px] tracking-[0.4em] uppercase inline-block font-bold shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
                                         Agendar Sessão
                                     </a>
                                 </div>
                             </div>
                         </section>
 
-                        <div className="bg-[var(--emerald-surface)] py-6 overflow-hidden relative z-20 border-y border-[var(--emerald-border)]">
-                            <div className="animate-marquee items-center gap-12 hover:[animation-play-state:paused] transition-all whitespace-nowrap flex-nowrap">
-                                {[1,2,3,4].map(i => (
-                                    <div key={i} className="flex items-center gap-12 md:gap-16 min-w-max px-4 md:px-8" aria-hidden={i !== 1}>
-                                        <span className="text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase text-[#F4E4C1]">Estética de Poder</span>
-                                        <span className="text-xl md:text-3xl font-editorial italic text-stroke-gld uppercase tracking-widest text-[#059669]">Confiança Inabalável</span>
-                                        <span className="text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase text-[#F4E4C1]">Alta Performance Visual</span>
-                                        <i data-lucide="crown" className="w-5 h-5 md:w-6 md:h-6 text-[#C5A059]"></i>
-                                    </div>
-                                ))}
+                        {/* PROVA SOCIAL */}
+                        <div className="bg-[var(--gld-surface)] py-4 border-y border-[var(--emerald-border)] relative z-20 shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex justify-center">
+                            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-6 opacity-90 reveal-on-scroll">
+                                <div className="flex gap-1">
+                                    {[1,2,3,4,5].map(star => (
+                                        <svg key={star} className="w-3 h-3 text-[#C5A059] fill-current drop-shadow-md" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    ))}
+                                </div>
+                                <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-[#A7C2B4] font-bold">
+                                    4.9/5 • Aprovado pela Elite Executiva de Chapecó
+                                </span>
                             </div>
                         </div>
 
-                        <section id="portfólio" className="py-32 md:py-48 px-6 bg-[var(--emerald-surface)] border-b border-[var(--emerald-border)]">
-                            <div className="max-w-7xl mx-auto mb-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 reveal-on-scroll">
-                                <div>
-                                    <span className="text-[10px] tracking-[0.4em] text-[#C5A059] uppercase block mb-4">A Galeria</span>
-                                    <h2 className="text-5xl md:text-6xl font-editorial italic">Portfólio GLD</h2>
-                                </div>
-                                <div className="flex gap-4">
-                                    <button aria-label="Deslizar galeria para a esquerda" onClick={() => scrollTrends('left')} className="p-5 rounded-full border border-[var(--emerald-border)] bg-[var(--emerald-bg)] hover:border-[#C5A059] transition-all focus-visible:outline focus-visible:outline-[#C5A059]">
-                                        <i data-lucide="chevron-left" className="w-5 h-5 text-[#C5A059]"></i>
-                                    </button>
-                                    <button aria-label="Deslizar galeria para a direita" onClick={() => scrollTrends('right')} className="p-5 rounded-full border border-[var(--emerald-border)] bg-[var(--emerald-bg)] hover:border-[#C5A059] transition-all focus-visible:outline focus-visible:outline-[#C5A059]">
-                                        <i data-lucide="chevron-right" className="w-5 h-5 text-[#C5A059]"></i>
-                                    </button>
-                                </div>
+                        {/* PORTFÓLIO -> COLEÇÃO DE CORTES (GRID RESPONSIVO - SEM CARROSSEL) */}
+                        <section id="coleção" className="py-24 md:py-48 px-6 bg-[var(--emerald-surface)] border-b border-[var(--emerald-border)]">
+                            <div className="max-w-7xl mx-auto mb-12 md:mb-20 flex flex-col justify-start reveal-on-scroll">
+                                <span className="text-[10px] tracking-[0.4em] text-[#C5A059] uppercase block mb-4">A Galeria</span>
+                                <h2 className="text-4xl md:text-6xl font-editorial italic text-white drop-shadow-md">Coleção de Cortes</h2>
                             </div>
 
-                            <div ref={trendsRef} 
-                                 className="flex gap-8 overflow-x-auto scrollbar-hide snap-x reveal-on-scroll cursor-grab active:cursor-grabbing"
-                                 onMouseDown={handleMouseDown} onMouseLeave={handleMouseLeave} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove}>
-                                {[
-                                    { img: "https://projetobarber2026.carrd.co/assets/images/image02.jpg?v=ec553877", t: "DEGRADÊ NAVALHADO", d: "Skin Fade Perfeito", alt: "Corte masculino Degradê Navalhado" },
-                                    { img: "https://projetobarber2026.carrd.co/assets/images/image03.jpg?v=ec553877", t: "SOCIAL EXECUTIVO", d: "Alta Costura em Tesoura", alt: "Corte clássico Social Executivo" },
-                                    { img: "https://projetobarber2026.carrd.co/assets/images/image01.jpg?v=1af6d300", t: "CROP TEXTURIZADO", d: "Geometria de Vanguarda", alt: "Corte vanguardista Crop Texturizado" }
-                                ].map((item, idx) => (
-                                    <article key={idx} className="min-w-[85vw] md:min-w-[450px] snap-center">
+                            {/* Layout em Grid - Perfeito e intuitivo no Mobile */}
+                            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 reveal-on-scroll">
+                                {portfolioItems.map((item, idx) => (
+                                    <article key={idx} className="w-full">
                                         <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[var(--emerald-border)] group shadow-2xl" onContextMenu={(e) => e.preventDefault()}>
                                             <img src={item.img} alt={item.alt} loading="lazy" decoding="async" className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-[1.5s] select-none" />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--emerald-bg)] via-[var(--emerald-bg)]/50 to-transparent pointer-events-none"></div>
-                                            <div className="absolute bottom-0 w-full p-8 md:p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 pointer-events-none">
-                                                <span className="text-[9px] tracking-[0.4em] text-[#C5A059] uppercase block mb-3 font-bold">{item.d}</span>
-                                                <h3 className="text-2xl md:text-3xl font-editorial italic tracking-wide">{item.t}</h3>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--emerald-bg)] via-[var(--emerald-bg)]/60 to-transparent pointer-events-none"></div>
+                                            <div className="absolute bottom-0 w-full p-6 md:p-8 transform md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500 pointer-events-none">
+                                                <span className="text-[8px] md:text-[9px] tracking-[0.4em] text-[#C5A059] uppercase block mb-2 font-bold drop-shadow-md">{item.d}</span>
+                                                <h3 className="text-xl md:text-2xl font-editorial italic tracking-wide text-white drop-shadow-lg leading-tight">{item.t}</h3>
                                             </div>
                                         </div>
                                     </article>
@@ -397,26 +337,76 @@
                             </div>
                         </section>
 
-                        <section id="catálogo" className="py-32 md:py-48 px-6 bg-[var(--light-contrast)] text-[var(--emerald-bg)]">
+                        {/* ARQUITETURA / PLANTA BAIXA */}
+                        <section id="arquitetura" className="py-24 md:py-48 px-6 bg-[var(--gld-bg)] border-y border-[var(--emerald-border)]">
                             <div className="max-w-7xl mx-auto reveal-on-scroll">
-                                <div className="text-center mb-24">
-                                    <span className="text-[10px] tracking-[0.5em] text-[#A68340] font-black uppercase mb-4 block">A Experiência</span>
-                                    <h2 className="text-5xl md:text-6xl font-editorial italic text-[var(--emerald-bg)]">O Catálogo</h2>
+                                <div className="text-center mb-16 md:mb-32">
+                                    <span className="text-[10px] tracking-[0.5em] text-[#C5A059] font-black uppercase mb-4 block">Engenharia do Espaço</span>
+                                    <h2 className="text-4xl md:text-6xl font-editorial italic text-white drop-shadow-md">Planta Baixa & Instalações</h2>
+                                    <p className="text-[11px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] text-[#A7C2B4] uppercase mt-6 max-w-2xl mx-auto leading-relaxed">
+                                        Mais de 200m² desenhados meticulosamente para garantir privacidade absoluta, conforto termal e uma acústica irrepreensível.
+                                    </p>
+                                </div>
+
+                                <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
+                                    <div className="order-1 lg:order-2">
+                                        <div className="relative aspect-video lg:aspect-square overflow-hidden rounded-2xl glass-emerald p-2 md:p-4 shadow-2xl">
+                                            <div className="absolute inset-0 bg-[var(--gld-bg)] opacity-40"></div>
+                                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000" alt="Planta baixa arquitetónica do estúdio" className="w-full h-full object-cover grayscale contrast-150 mix-blend-screen opacity-70 rounded-xl" loading="lazy" />
+                                            <div className="absolute top-6 right-6 border border-[#C5A059] text-[#C5A059] text-[8px] md:text-[9px] uppercase tracking-[0.4em] px-3 py-1.5 bg-[var(--gld-bg)]/80 backdrop-blur-sm rounded-sm">
+                                                Acesso Restrito
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="order-2 lg:order-1 flex flex-col gap-10 md:gap-12">
+                                        <div className="flex gap-4 md:gap-6 items-start group">
+                                            <span className="text-2xl md:text-3xl font-editorial italic text-[#C5A059]">01</span>
+                                            <div>
+                                                <h4 className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-white mb-2 group-hover:text-[#C5A059] transition-colors">Recepção Executiva</h4>
+                                                <p className="text-[11px] md:text-sm text-[#A7C2B4] leading-relaxed">Lounge de espera com curadoria de café espresso premium, poltronas Chesterfield e ambiente climatizado. O primeiro impacto de alto padrão.</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-4 md:gap-6 items-start group">
+                                            <span className="text-2xl md:text-3xl font-editorial italic text-[#C5A059]">02</span>
+                                            <div>
+                                                <h4 className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-white mb-2 group-hover:text-[#C5A059] transition-colors">Black Rooms</h4>
+                                                <p className="text-[11px] md:text-sm text-[#A7C2B4] leading-relaxed">Estações de corte isoladas acusticamente. Iluminação cirúrgica LED regulável e cadeiras estofadas à mão para rituais sem interrupções.</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-4 md:gap-6 items-start group">
+                                            <span className="text-2xl md:text-3xl font-editorial italic text-[#C5A059]">03</span>
+                                            <div>
+                                                <h4 className="text-base md:text-lg font-bold tracking-[0.2em] uppercase text-white mb-2 group-hover:text-[#C5A059] transition-colors">Bar & Single Malts</h4>
+                                                <p className="text-[11px] md:text-sm text-[#A7C2B4] leading-relaxed">Um santuário escondido dentro da barbearia. Seleção restrita de maltes escoceses e destilados para brindar ao fechamento de grandes negócios.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* CATÁLOGO DE SERVIÇOS */}
+                        <section id="catálogo" className="py-24 md:py-48 px-6 bg-[var(--light-contrast)] text-[var(--gld-bg)]">
+                            <div className="max-w-7xl mx-auto reveal-on-scroll">
+                                <div className="text-center mb-16 md:mb-24">
+                                    <span className="text-[10px] tracking-[0.5em] text-[#8C6D31] font-black uppercase mb-4 block">A Experiência</span>
+                                    <h2 className="text-4xl md:text-6xl font-editorial italic text-[var(--gld-bg)] drop-shadow-sm">O Catálogo</h2>
                                 </div>
                                 
-                                <div className="grid md:grid-cols-3 gap-8">
+                                <div className="grid md:grid-cols-3 gap-8 md:gap-8">
                                     {services.map((s, i) => (
-                                        <article key={i} className="bg-white rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-shadow duration-500 group border border-gray-100">
-                                            <div className="relative h-64 overflow-hidden">
+                                        <article key={i} className="bg-white rounded-xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-shadow duration-500 group border border-gray-200">
+                                            <div className="relative h-56 md:h-64 overflow-hidden">
                                                 <img src={s.img} alt={`Serviço de ${s.title}`} loading="lazy" decoding="async" className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 select-none" />
-                                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                                                    <span className="text-sm font-bold text-[var(--emerald-bg)]">R$ {s.p}</span>
+                                                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full shadow-md">
+                                                    <span className="text-sm font-bold text-[var(--gld-bg)]">R$ {s.p}</span>
                                                 </div>
                                             </div>
-                                            <div className="p-8 md:p-10 bg-white">
-                                                <h3 className="text-2xl font-editorial italic mb-4 text-[var(--emerald-bg)]">{s.title}</h3>
-                                                <p className="text-[10px] tracking-widest text-gray-500 uppercase leading-relaxed mb-8">{s.desc}</p>
-                                                <a href={WALink} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#A68340] group-hover:text-[var(--emerald-bg)] transition-colors focus-visible:outline focus-visible:outline-[#C5A059] w-max">
+                                            <div className="p-6 md:p-10 bg-white">
+                                                <h3 className="text-xl md:text-2xl font-editorial italic mb-3 text-[var(--gld-bg)]">{s.title}</h3>
+                                                <p className="text-[10px] tracking-widest text-gray-700 uppercase leading-relaxed mb-8">{s.desc}</p>
+                                                <a href={WALink} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#8C6D31] group-hover:text-[var(--emerald-pop)] transition-colors focus-visible:outline focus-visible:outline-[#C5A059] w-max p-2 -ml-2 rounded-sm">
                                                     Reservar <i data-lucide="arrow-right" className="w-4 h-4"></i>
                                                 </a>
                                             </div>
@@ -426,128 +416,90 @@
                             </div>
                         </section>
 
-                        <section id="aliança" className="py-32 px-6 bg-[var(--emerald-surface)] border-y border-[var(--emerald-border)] relative overflow-hidden">
-                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 ambient-light rounded-full mix-blend-screen opacity-50 -z-0 pointer-events-none"></div>
-                            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 reveal-on-scroll relative z-10">
+                        {/* ALIANÇA / EXPERIÊNCIA VANGUARD */}
+                        <section id="aliança" className="py-24 md:py-32 px-6 bg-[var(--gld-surface)] border-y border-[var(--emerald-border)] relative overflow-hidden">
+                            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 ambient-light rounded-full mix-blend-screen opacity-50 -z-0 pointer-events-none" aria-hidden="true"></div>
+                            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16 reveal-on-scroll relative z-10">
                                 <div className="w-full md:w-1/2">
                                     <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[var(--emerald-border)]" onContextMenu={(e) => e.preventDefault()}>
-                                        <img src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?auto=format&fit=crop&q=80&w=1000" alt="Mestre e Cliente construindo a Aliança GLD" loading="lazy" decoding="async" className="w-full h-full object-cover grayscale opacity-80 select-none" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--emerald-bg)] to-transparent pointer-events-none"></div>
-                                        <div className="absolute bottom-6 left-6 right-6 p-6 glass-emerald rounded-lg pointer-events-none">
-                                            <h3 className="text-xl font-editorial italic text-white mb-1">A Aliança GLD</h3>
-                                            <p className="text-[9px] tracking-[0.3em] text-[#C5A059] uppercase">Mestria & Confiança</p>
+                                        <img src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?auto=format&fit=crop&q=80&w=1000" alt="Atendimento Premium GLD" loading="lazy" decoding="async" className="w-full h-full object-cover grayscale opacity-80 select-none" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--gld-bg)] to-transparent pointer-events-none"></div>
+                                        <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 p-6 glass-emerald rounded-lg pointer-events-none shadow-2xl">
+                                            <h3 className="text-lg md:text-xl font-editorial italic text-white mb-1">Experiência Imperium</h3>
+                                            <p className="text-[8px] md:text-[9px] tracking-[0.3em] text-[#C5A059] uppercase font-bold">Técnica & Exclusividade</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="w-full md:w-1/2">
-                                    <i data-lucide="scissors" className="w-10 h-10 text-[#C5A059] mb-8" aria-hidden="true"></i>
-                                    <h2 className="text-4xl md:text-6xl font-editorial italic mb-6">O Elo de <br/><span className="text-brushed-gold font-sans not-italic font-black tracking-tighter uppercase">Confiança.</span></h2>
-                                    <p className="text-sm font-tech text-[#A7C2B4] leading-relaxed mb-8">
-                                        A grande barbearia transcende o corte. Trata-se da parceria inquebrável entre o Mestre e o Cliente. No Vanguard GLD, não construímos apenas imagens impecáveis, cultivamos uma irmandade de sucesso. 
+                                <div className="w-full md:w-1/2 text-center md:text-left">
+                                    <i data-lucide="scissors" className="w-8 h-8 md:w-10 md:h-10 text-[#C5A059] mb-6 md:mb-8 mx-auto md:mx-0 drop-shadow-md" aria-hidden="true"></i>
+                                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-editorial italic mb-6 text-white drop-shadow-md">Atendimento <br/><span className="text-brushed-gold font-sans not-italic font-black tracking-tighter uppercase">Premium.</span></h2>
+                                    <p className="text-xs md:text-sm font-tech text-[#A7C2B4] leading-relaxed mb-6 md:mb-8 max-w-lg mx-auto md:mx-0 drop-shadow-sm">
+                                        Uma barbearia de luxo vai muito além do corte. Na Imperium Barber Club, focamo-nos no que realmente importa: técnica impecável, pontualidade e um ambiente preparado para homens que valorizam o próprio tempo e imagem.
                                     </p>
-                                    <p className="text-xs tracking-[0.2em] uppercase font-bold text-[#C5A059] mb-12">
-                                        Seu Estilo. Nossa Assinatura. Um Ritual Único.
+                                    <p className="text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold text-[#C5A059]">
+                                        Seu Estilo. Nossa Assinatura. Resultados Reais.
                                     </p>
                                 </div>
                             </div>
                         </section>
 
-                        <section id="arquitetura" className="py-32 md:py-48 px-6 bg-[var(--gld-bg)] border-y border-[var(--emerald-border)]">
-                            <div className="max-w-7xl mx-auto reveal-on-scroll">
-                                <div className="text-center mb-20 md:mb-32">
-                                    <span className="text-[10px] tracking-[0.5em] text-[#C5A059] font-black uppercase mb-4 block">Engenharia do Espaço</span>
-                                    <h2 className="text-4xl md:text-6xl font-editorial italic text-white">Planta Baixa & Instalações</h2>
-                                    <p className="text-xs tracking-[0.3em] text-[#A7C2B4] uppercase mt-6 max-w-2xl mx-auto leading-relaxed">
-                                        Mais de 200m² desenhados meticulosamente para garantir privacidade absoluta, conforto termal e uma acústica irrepreensível.
-                                    </p>
-                                </div>
-
-                                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                                    <div className="order-2 lg:order-1 flex flex-col gap-12">
-                                        <div className="flex gap-6 items-start group">
-                                            <span className="text-2xl font-editorial italic text-[#C5A059]">01</span>
-                                            <div>
-                                                <h4 className="text-lg font-bold tracking-[0.2em] uppercase text-white mb-2 group-hover:text-[#C5A059] transition-colors">Recepção Executiva</h4>
-                                                <p className="text-sm text-[#A7C2B4] leading-relaxed">Lounge de espera com curadoria de café espresso premium, poltronas Chesterfield e ambiente climatizado. O primeiro impacto do padrão GLD.</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex gap-6 items-start group">
-                                            <span className="text-2xl font-editorial italic text-[#C5A059]">02</span>
-                                            <div>
-                                                <h4 className="text-lg font-bold tracking-[0.2em] uppercase text-white mb-2 group-hover:text-[#C5A059] transition-colors">Salões Privativos (Black Rooms)</h4>
-                                                <p className="text-sm text-[#A7C2B4] leading-relaxed">Estações de corte isoladas acusticamente. Iluminação cirúrgica LED regulável e cadeiras estofadas à mão para rituais sem interrupções externas.</p>
-                                            </div>
-                                        </div>
-                                        <div className="flex gap-6 items-start group">
-                                            <span className="text-2xl font-editorial italic text-[#C5A059]">03</span>
-                                            <div>
-                                                <h4 className="text-lg font-bold tracking-[0.2em] uppercase text-white mb-2 group-hover:text-[#C5A059] transition-colors">Bar & Single Malts</h4>
-                                                <p className="text-sm text-[#A7C2B4] leading-relaxed">Um santuário escondido dentro da barbearia. Seleção restrita de maltes escoceses e destilados para brindar ao fechamento de grandes negócios.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="order-1 lg:order-2">
-                                        <div className="relative aspect-square md:aspect-video lg:aspect-square overflow-hidden rounded-2xl glass-emerald p-4">
-                                            <div className="absolute inset-0 bg-[var(--gld-bg)] opacity-40"></div>
-                                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000" alt="Planta baixa arquitetónica do estúdio Vanguard GLD" className="w-full h-full object-cover grayscale contrast-150 mix-blend-screen opacity-70" />
-                                            <div className="absolute top-8 right-8 border border-[#C5A059] text-[#C5A059] text-[9px] uppercase tracking-[0.4em] px-4 py-2 bg-[var(--gld-bg)]/80 backdrop-blur-sm">
-                                                Acesso Restrito
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section className="py-40 text-center px-6 bg-[var(--emerald-surface)] border-t border-[var(--emerald-border)]">
+                        <section className="py-32 md:py-40 text-center px-6 bg-[var(--gld-bg)] border-t border-[var(--emerald-border)]">
                             <div className="reveal-on-scroll max-w-4xl mx-auto flex flex-col items-center">
-                                <RedTieIcon className="w-12 h-12 mb-10 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]" />
-                                <h2 className="text-5xl md:text-8xl font-editorial italic leading-tight mb-8">
+                                <RedTieIcon className="w-10 h-10 md:w-12 md:h-12 mb-8 md:mb-10 drop-shadow-[0_0_15px_rgba(220,38,38,0.4)]" />
+                                <h2 className="text-4xl md:text-7xl lg:text-8xl font-editorial italic leading-tight mb-6 md:mb-8 text-white drop-shadow-xl">
                                     A Sua Nova <br/> 
                                     <span className="text-brushed-gold font-sans not-italic font-black uppercase tracking-tighter">Assinatura.</span>
                                 </h2>
-                                <p className="text-xs tracking-[0.3em] text-[#A7C2B4] uppercase mb-16 max-w-lg mx-auto leading-loose">
+                                <p className="text-[10px] md:text-xs tracking-[0.3em] text-[#A7C2B4] uppercase mb-12 md:mb-16 max-w-lg mx-auto leading-loose drop-shadow-md">
                                     Junte-se à elite de Chapecó. Agende o seu horário e exija a excelência absoluta.
                                 </p>
-                                <a href={WALink} className="btn-gld px-16 py-6 rounded-sm text-xs tracking-[0.4em] uppercase font-bold inline-block">
+                                <a href={WALink} className="btn-gld px-12 md:px-16 py-5 md:py-6 rounded-sm text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold inline-block hover:scale-105 transition-transform focus-visible:outline focus-visible:outline-[#C5A059]">
                                     Garantir Meu Horário
                                 </a>
+                                
+                                {/* REVERSÃO DE RISCO (Funil Passo 9: Quebra de Objeção Final) */}
+                                <div className="mt-8 flex flex-col items-center gap-2 opacity-80">
+                                    <i data-lucide="shield-check" className="w-4 h-4 text-[#C5A059]"></i>
+                                    <span className="text-[8px] md:text-[9px] tracking-[0.3em] text-[#A7C2B4] uppercase font-bold">
+                                        Satisfação Absoluta Garantida
+                                    </span>
+                                </div>
                             </div>
                         </section>
                     </main>
 
-                    <footer className="py-24 border-t border-[var(--emerald-border)] px-6 bg-[var(--emerald-surface)]">
-                        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8">
+                    <footer className="py-16 md:py-24 border-t border-[var(--emerald-border)] px-6 bg-[var(--gld-surface)]">
+                        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
                             
-                            <div className="md:col-span-4 flex flex-col gap-6">
+                            <div className="md:col-span-4 flex flex-col gap-4 md:gap-6 items-center md:items-start text-center md:text-left">
                                 <div className="flex items-center gap-3">
-                                    <RedTieIcon className="w-5 h-5" />
-                                    <span className="text-sm font-bold tracking-[0.3em] uppercase text-white">VANGUARD <span className="text-[#C5A059]">GLD</span></span>
+                                    <RedTieIcon className="w-4 h-4 md:w-5 md:h-5" />
+                                    <span className="text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-white">IMPERIUM <span className="text-[#C5A059]">CLUB</span></span>
                                 </div>
-                                <p className="text-[10px] tracking-[0.2em] text-[#A7C2B4] uppercase leading-relaxed max-w-xs">
+                                <p className="text-[9px] md:text-[10px] tracking-[0.2em] text-[#A7C2B4] uppercase leading-relaxed max-w-xs">
                                     A arquitetura da sua imagem elevada à máxima excelência. O santuário masculino definitivo em Chapecó.
                                 </p>
                             </div>
 
-                            <div className="md:col-span-4 flex flex-col gap-6">
-                                <h4 className="text-[10px] tracking-[0.4em] text-[#C5A059] uppercase font-bold">Mapa do Site</h4>
-                                <nav className="flex flex-col gap-4" aria-label="Mapa do Site">
-                                    {['O Estúdio', 'Catálogo', 'Arquitetura', 'Portfólio', 'Aliança'].map((link) => (
-                                        <a key={link} href={`#${link.toLowerCase().replace(' ', '').replace('o', '')}`} className="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-white transition-colors w-max">
+                            <div className="md:col-span-4 flex flex-col gap-4 md:gap-6 items-center md:items-start">
+                                <h4 className="text-[9px] md:text-[10px] tracking-[0.4em] text-[#C5A059] uppercase font-bold">Mapa do Site</h4>
+                                <nav className="flex flex-col gap-3 md:gap-4 items-center md:items-start" aria-label="Mapa do Site">
+                                    {['O Estúdio', 'Catálogo', 'Arquitetura', 'Coleção', 'Aliança'].map((link) => (
+                                        <a key={link} href={`#${link.toLowerCase().replace(' ', '').replace('o', '').replace('ã', 'a').replace('ç', 'c')}`} className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-white transition-colors w-max p-1 focus-visible:outline focus-visible:outline-[#C5A059]">
                                             {link}
                                         </a>
                                     ))}
                                 </nav>
                             </div>
 
-                            <div className="md:col-span-4 flex flex-col gap-6">
-                                <h4 className="text-[10px] tracking-[0.4em] text-[#C5A059] uppercase font-bold">Coordenadas & Contato</h4>
-                                <address className="not-italic flex flex-col gap-4 text-xs uppercase tracking-[0.2em] text-gray-400">
-                                    <p className="flex items-start gap-3">
+                            <div className="md:col-span-4 flex flex-col gap-4 md:gap-6 items-center md:items-start text-center md:text-left">
+                                <h4 className="text-[9px] md:text-[10px] tracking-[0.4em] text-[#C5A059] uppercase font-bold">Coordenadas & Contato</h4>
+                                <address className="not-italic flex flex-col gap-3 md:gap-4 text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-400 items-center md:items-start">
+                                    <p className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-3">
                                         <i data-lucide="map-pin" className="w-4 h-4 text-[#C5A059] shrink-0"></i>
                                         <span>Centro Premium<br/>Chapecó, Santa Catarina<br/>Brasil</span>
                                     </p>
-                                    <p className="flex items-center gap-3 mt-2">
+                                    <p className="flex flex-col md:flex-row items-center gap-2 md:gap-3 mt-2">
                                         <i data-lucide="clock" className="w-4 h-4 text-[#C5A059] shrink-0"></i>
                                         <span>Ter a Sáb — 09:00 às 20:00</span>
                                     </p>
@@ -555,25 +507,35 @@
                             </div>
                         </div>
 
-                        <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-[var(--emerald-border)] flex flex-col md:flex-row justify-between items-center gap-6">
-                            <span className="text-[9px] tracking-[0.3em] uppercase text-[#A7C2B4]">
-                                &copy; 2026 GLD STUDIO. ALL RIGHTS RESERVED.
+                        <div className="max-w-7xl mx-auto mt-16 md:mt-24 pt-8 border-t border-[var(--emerald-border)] flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+                            <span className="text-[8px] md:text-[9px] tracking-[0.3em] uppercase text-[#A7C2B4]">
+                                &copy; 2026 IMPERIUM BARBER CLUB. ALL RIGHTS RESERVED.
                             </span>
-                            <div className="flex gap-8">
-                                <a href="#" className="text-[9px] tracking-[0.3em] uppercase text-[#A7C2B4] hover:text-[#C5A059] transition-colors">Política de Privacidade</a>
-                                <a href="#" className="text-[9px] tracking-[0.3em] uppercase text-[#A7C2B4] hover:text-[#C5A059] transition-colors">Instagram Oficial</a>
+                            <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                                <a href="#" className="text-[8px] md:text-[9px] tracking-[0.3em] uppercase text-[#A7C2B4] hover:text-[#C5A059] transition-colors p-1 focus-visible:outline focus-visible:outline-[#C5A059]">Política de Privacidade</a>
+                                <a href="#" className="text-[8px] md:text-[9px] tracking-[0.3em] uppercase text-[#A7C2B4] hover:text-[#C5A059] transition-colors p-1 focus-visible:outline focus-visible:outline-[#C5A059]">Instagram Oficial</a>
                             </div>
                         </div>
                     </footer>
 
                     {/* Botão Return to Top */}
-                    <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} aria-label="Voltar ao topo" className={`fixed bottom-28 right-8 z-[190] w-10 h-10 bg-[var(--emerald-surface)] border border-[var(--gold-main)]/30 rounded-full flex items-center justify-center shadow-lg transition-all duration-500 hover:bg-[var(--gold-main)]/10 focus-visible:outline focus-visible:outline-[#C5A059] ${isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
+                    <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} aria-label="Voltar ao topo" className={`fixed bottom-24 md:bottom-28 right-6 md:right-8 z-[190] w-10 h-10 md:w-12 md:h-12 bg-[var(--gld-surface)] border border-[#C5A059]/30 rounded-full flex items-center justify-center shadow-lg transition-all duration-500 hover:bg-[#C5A059]/10 focus-visible:outline focus-visible:outline-[#C5A059] ${isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
                         <i data-lucide="chevron-up" className="w-5 h-5 text-[#C5A059]"></i>
                     </button>
 
-                    {/* FAB WHATSAPP */}
-                    <a href={WALink} aria-label="Falar com Vanguard no WhatsApp" className="fixed bottom-8 right-8 z-[200] w-16 h-16 bg-[var(--emerald-pop)] rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(5,150,105,0.4)] hover:scale-110 transition-transform border border-emerald-300/30 group focus-visible:outline focus-visible:outline-[#C5A059]">
-                        <WhatsAppIcon />
+                    {/* FAB CONCIERGE REFINADO E ALINHADO */}
+                    <a href={WALink} aria-label="Acionar Imperium Concierge" className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[350] bg-[var(--gld-surface)] border border-[#C5A059]/30 backdrop-blur-xl rounded-full px-4 md:px-5 py-3 flex items-center gap-3 shadow-[0_15px_30px_rgba(0,0,0,0.6)] hover:bg-[#C5A059]/10 hover:border-[#C5A059] hover:scale-105 transition-all group focus-visible:outline focus-visible:outline-[#C5A059]">
+                        <div className="relative flex items-center justify-center">
+                            <i data-lucide="shield-check" className="w-4 h-4 md:w-5 md:h-5 text-[#C5A059]" aria-hidden="true"></i>
+                            <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C5A059] opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C5A059]"></span>
+                            </span>
+                        </div>
+                        <div className="flex flex-col text-left">
+                            <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-[#F4E4C1] whitespace-nowrap group-hover:text-white transition-colors">Imperium Concierge</span>
+                            <span className="text-[7px] md:text-[8px] uppercase tracking-[0.1em] text-[#A7C2B4] whitespace-nowrap">Sessões Limitadas</span>
+                        </div>
                     </a>
                 </div>
             );
@@ -582,7 +544,6 @@
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
         
-        // Timeout para garantir que os ícones lucide renderizam após o React virtual DOM
         setTimeout(() => lucide.createIcons(), 500);
     </script>
 </body>
